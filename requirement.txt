@@ -1,0 +1,15 @@
+# Core framework
+fastapi
+uvicorn
+httpx
+pydantic
+sqlalchemy
+
+# Testing & validation
+pytest
+pytest-asyncio
+
+# Optional helpers for future heads
+python-multipart      # For file uploads if needed
+python-dotenv         # For env variables
+    
