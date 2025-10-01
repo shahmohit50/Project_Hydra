@@ -20,4 +20,6 @@ jobs:
         run: docker build -t hydra-core:latest .
 
       - name: Run Orchestrator
-        run: docker run --rm hydra-core:latest
+        # run: docker run --rm hydra-core:latest
+        run: docker run --rm -v $(pwd)/data:/app/data hydra-core
+
