@@ -1,6 +1,6 @@
 # This is my Hydra Skeleton
 import logging
-from core import model_broker, sandbox, lorekeeper
+from core import model_broker, sandbox, lorekeeper, git_commit_push
 
 logging.basicConfig(level=logging.INFO)
 
@@ -18,6 +18,8 @@ def main():
     # Example: sandbox test
     result = sandbox.run_code("print('Hello from sandbox!')")
     logging.info(f"Sandbox result: {result}")
-
+    
+    # Auto-commit & push updated memory
+    git_commit_push.commit_push("Hydra updated memory")
 if __name__ == "__main__":
     main()
