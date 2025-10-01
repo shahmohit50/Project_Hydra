@@ -19,6 +19,8 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install -r requirement.txt
 RUN git config --global --add safe.directory /app
+RUN git config --global user.name "Hydra Bot" \
+ && git config --global user.email "hydra@localhost"
 
 # Expose port for FastAPI (optional)
 EXPOSE 8000
