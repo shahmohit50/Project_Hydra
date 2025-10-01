@@ -2,6 +2,9 @@ import sqlite3
 from pathlib import Path
 import logging
 
+data_folder = Path(__file__).resolve().parent.parent / "data"
+data_folder.mkdir(parents=True, exist_ok=True)  # <-- this ensures the directory exists
+
 DB_PATH = Path(__file__).resolve().parent.parent / "data" / "lore.sqlite"
 
 def init_db():
