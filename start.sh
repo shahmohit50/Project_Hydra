@@ -18,7 +18,7 @@ echo "⬇️ Pulling mistral model (this may take a while the first time)..."
 ollama pull mistral:7b-instruct-v0.2-q4_K_M || { echo "❌ Failed to pull mistral"; kill $OLLAMA_PID; exit 1; }
 
 # Start Hydra orchestrator
-python -m core/orchestrator.py
+python -m core.orchestrator.py
 
 # Stop Ollama when Hydra exits
 kill $OLLAMA_PID
