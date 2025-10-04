@@ -12,7 +12,8 @@ class CodeForger:
         desc = payload.get("description", "small demo")
         prompt = f"Create a {language} project: {desc} -- give files and structure"
 
-        generated = await model_broker.broker.query(prompt)
+        # generated = await model_broker.broker.query(prompt)
+        generated = await model_broker.broker.load("mistral:7b-instruct-v0.2-q4_K_M",prompt)
 
         timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
         filename = OUTDIR / f"{payload.get('project_name','project')}-{timestamp}.json"

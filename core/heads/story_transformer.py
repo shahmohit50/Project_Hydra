@@ -16,7 +16,8 @@ class StoryTransformer:
         prompt = f"Transform this story into {style} fantasy while preserving {', '.join(preserve)}:\n{story}"
 
         # generated = await model_broker.broker.query(prompt)
-        generated = await model_broker.broker.query(prompt, model="groq")
+        # generated = await model_broker.broker.query(prompt, model="groq")
+        generated = await model_broker.broker.load("llama-3-70b",prompt)
 
         timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
         filename = OUTDIR / f"transformed-{timestamp}.json"
