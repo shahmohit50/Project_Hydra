@@ -5,7 +5,8 @@ echo "🐉 Hydra Awakening Sequence Starting..."
 
 # Start Ollama server in background
 echo "📦 Starting Ollama service..." 
-ollama serve
+ollama serve &
+OLLAMA_PID=$!
 # ollama server --port 11434 &
 # OLLAMA_PID=$!
 
