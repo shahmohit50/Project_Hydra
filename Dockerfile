@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     wget \
-    requests \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
@@ -19,6 +18,7 @@ COPY . /app
 # Upgrade pip and install Python dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirement.txt
+RUN pip install requests
 RUN curl -fsSL https://ollama.com/install.sh | sh
 RUN mkdir -p /app/data /app/models /root/.ollama
 
