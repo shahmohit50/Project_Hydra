@@ -12,7 +12,7 @@ class ComicCrafter:
         prompt = f"Generate comic panel prompts for: {scene}"
 
         # generated = await model_broker.broker.query(prompt)
-        generated = await model_broker.broker.load("mistral:7b-instruct-v0.2-q4_K_M",prompt)
+        generated = model_broker.broker.load("mistral:7b-instruct-v0.2-q4_K_M",prompt)
 
         timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
         filename = OUTDIR / f"comic-{timestamp}.json"
