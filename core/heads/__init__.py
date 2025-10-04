@@ -9,5 +9,5 @@ HEAD_REGISTRY = {
     "story_transformer": StoryTransformer,
     "code_forger": CodeForger,
     "comic_crafter": ComicCrafter,
-    "voice_forge": VoiceForge,
+    # "voice_forge": VoiceForge,
 }
