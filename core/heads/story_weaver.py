@@ -11,7 +11,8 @@ class StoryWeaver:
         title = payload.get("title", "untitled")
         prompt = payload.get("input", f"Write a short scene titled {title}")
 
-        generated = await model_broker.broker.query(prompt)
+        # generated = await model_broker.broker.query(prompt)
+        generated = await model_broker.broker.query(prompt, model="mistral")
 
         timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
         filename = OUTDIR / f"{title.replace(' ','_')}-{timestamp}.json"
