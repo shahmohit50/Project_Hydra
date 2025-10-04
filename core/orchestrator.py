@@ -21,7 +21,7 @@ async def main_async():
     lorekeeper.log_awaken("Hydra has awakened in Docker.")
 
     # Example: call model broker
-    response = model_broker.get_response("Say hello, Hydra!")
+    response = model_broker.load("mistral:7b-instruct-v0.2-q4_K_M","Say hello, Hydra!")
     logging.info(f"Model Broker says: {response}")
 
     tasks = [
