@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     wget \
+    pip install requests \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
