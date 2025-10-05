@@ -38,7 +38,7 @@ class Broker:
             "messages": [
                 {
                 "role": "user",
-                "content": "Say hello, Hydra!"
+                "content": prompt
                 }
             ]
         }
