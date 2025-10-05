@@ -52,7 +52,10 @@ class Broker:
             for line in response.iter_lines():
                     if line:
                         try:
+                            logging.info(f"Response Line: {line}")
+                            logging.info(f"Response Line UTF-8: {line.decode("utf-8")}")
                             data = json.loads(line.decode("utf-8"))
+
                             # Extract incremental content from streaming chunk
                             content = data.get("message", {}).get("content", "")
                             full_response += content
