@@ -33,7 +33,8 @@ class Broker:
         resp = requests.post(
             f"{self.ollama_url}/api/chat",
             json={"model": model, "prompt": prompt},
-            stream=True,
+            stream=False,
+            timeout=120,
         )
         output = ""
         for line in resp.iter_lines():
