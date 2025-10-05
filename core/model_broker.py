@@ -34,7 +34,13 @@ class Broker:
         logging.info(f"🌀 Using Ollama model: {model}")
         payload = {
             "model": self.model,
-            "messages": prompt,
+            # "messages": prompt,
+            "messages": [
+                {
+                "role": "user",
+                "content": "Say hello, Hydra!"
+                }
+            ]
         }
         response = requests.post(self.api_base, json=payload, stream=True)
         # resp = requests.post(
