@@ -36,7 +36,23 @@ class Broker:
             stream=False,
             timeout=120,
         )
-        output = ""
+        logging.info(f"Response Status Code: {resp.status_code}")
+        logging.info(f"Response Headers: {resp.headers}")
+        if resp.status_code == 200:
+            try:
+                logging.info(f"Response Text: {resp.text}")  # Log the raw response text
+                response_json = resp.json()
+                output = response_json.get("response", "").strip()
+                logging.info(f"Parsed Output: {output}")
+                return output
+            except Exception as e:
+                logging.error(f"Error processing response: {e}")
+                return ""
+        else:
+            logging.error(f"Request failed with status: {resp.status_code}")
+            return ""
+
+        # output = ""
         for line in resp.iter_lines():
             if line:
                 try:
