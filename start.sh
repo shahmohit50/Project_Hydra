@@ -15,10 +15,11 @@ sleep 5
 
 # Pull mistral model (if not already cached in Docker layer/volume) 
 echo "⬇️ Pulling mistral model (this may take a while the first time)..." 
-ollama pull mistral:7b-instruct-v0.2-q4_K_M || { echo "❌ Failed to pull mistral"; kill $OLLAMA_PID; exit 1; }
-
+#ollama pull mistral:7b-instruct-v0.2-q4_K_M || { echo "❌ Failed to pull mistral"; kill $OLLAMA_PID; exit 1; }
+ollama pull deepseek-r1:8b-0528-qwen3-q4_K_M || { echo "❌ Failed to pull mistral"; kill $OLLAMA_PID; exit 1; }
 # Start Hydra orchestrator
-python -m core.orchestrator
+#python -m core.orchestrator
+python crew_demo.py
 
 # Stop Ollama when Hydra exits
 kill $OLLAMA_PID
