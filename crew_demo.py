@@ -231,7 +231,8 @@ def run_boardroom_debate(idea: str):
 # === 8. CLI Entry Point ===
 if __name__ == "__main__":
     print("🔥 Welcome to the AI Boardroom Debate 🔥")
-    user_idea = input("Paste your startup idea below:\n\n>> ")
+    #user_idea = input("Paste your startup idea below:\n\n>> ")
+    user_idea = '''We are building a system called **Boardroom With Backbone™** — an AI-powered startup simulator that evaluates startup ideas like a real executive boardroom. The user submits an idea, then a panel of expert AI agents (CEO, CTO, VC, Analyst, etc.) analyze it in multiple rounds.But here’s the twist:- If the idea is weak, the agents **vote to Pivot or Kill**- Then, they **suggest better pivots** themselves- The user can accept a pivot or get hit with a **Brutal Roast™**- Only when a majority votes "Go" does the idea move to MVP planning and pitch building'''
 
     try:
         final_summary = run_boardroom_debate(user_idea)
@@ -239,3 +240,4 @@ if __name__ == "__main__":
         print(final_summary)
     except Exception as e:
         print(f"\n❌ Error during debate: {e}")
+
