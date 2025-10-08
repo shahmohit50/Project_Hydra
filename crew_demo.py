@@ -8,7 +8,7 @@ from crewai.llm import BaseLLM
 
 class LiteLLMOllama(BaseLLM):
     def __init__(self):
-        self.model = "deepseek-r1:8b-0528-qwen3-q4_K_M" #"mistral:7b-instruct-v0.3-q4_k_m"   # Model you're running locally with Ollama "llama3.1:latest
+        self.model = "granite4:tiny-h" #"mistral:7b-instruct-v0.3-q4_k_m"   # Model you're running locally with Ollama "llama3.1:latest
         self.api_base = "http://localhost:11434/api/chat"  # Ollama's API root endpoint
         self.stop = []
         # self.model = "llama-3.3-70b-versatile"  # Replace with the specific GROQ model ID you want to use
@@ -240,4 +240,5 @@ if __name__ == "__main__":
         print(final_summary)
     except Exception as e:
         print(f"\n❌ Error during debate: {e}")
+
 
