@@ -93,7 +93,7 @@ def build_expert_agents():
             goal="Define the vision, scalability, and big-picture impact of the startup idea.",
             backstory="You’ve built multiple unicorns. You think in bold, visionary terms.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
             llm=ollama_llm,
-            expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+            expected_output="Provide 3–5 bullet points. Be crisp and factual.",
             verbose=True
         ),
         Agent(
@@ -101,7 +101,7 @@ def build_expert_agents():
             goal="Analyze technical feasibility and suggest the ideal tech stack or architecture.",
             backstory="You're a battle-tested CTO who builds scalable, secure systems from scratch.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
             llm=ollama_llm,
-            expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+            expected_output="Provide 3–5 bullet points. Be crisp and factual.",
             verbose=True
         ),
         Agent(
@@ -109,7 +109,7 @@ def build_expert_agents():
             goal="Evaluate market demand, customer pain points, and competitive landscape.",
             backstory="You’re a strategist who finds product-market fit like a bloodhound.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
             llm=ollama_llm,
-            expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+            expected_output="Provide 3–5 bullet points. Be crisp and factual.",
             verbose=True
         ),
         Agent(
@@ -117,7 +117,7 @@ def build_expert_agents():
             goal="Critically assess investability, monetization, and potential returns.",
             backstory="You've invested in 50+ startups. You spot unicorns — and red flags — instantly.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
             llm=ollama_llm,
-            expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+            expected_output="Provide 3–5 bullet points. Be crisp and factual.",
             verbose=True
         ),
         Agent(
@@ -125,7 +125,7 @@ def build_expert_agents():
             goal="Advocate for users by improving usability, onboarding, and design simplicity.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
             backstory="You craft seamless digital experiences that delight users.",
             llm=ollama_llm,
-            expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+            expected_output="Provide 3–5 bullet points. Be crisp and factual.",
             verbose=True
         )
     ]
@@ -135,7 +135,7 @@ def build_summary_agent():
         role="Chief of Staff",
         goal="Summarize the boardroom's discussion into a unified strategic plan.",
         backstory="You're the ultimate executive assistant — clear, concise, and persuasive. You distill chaos into clarity.Provide concise, high-level insights, focusing only on key vision, scalability, and long-term impact. Avoid unnecessary details.",
-        expected_output="Provide 3–5 bullet points. Each under 20 words. Be crisp and factual.",
+        expected_output="Provide 3–5 bullet points. Be crisp and factual.",
         llm=ollama_llm,
         verbose=True
     )
@@ -240,5 +240,6 @@ if __name__ == "__main__":
         print(final_summary)
     except Exception as e:
         print(f"\n❌ Error during debate: {e}")
+
 
 
